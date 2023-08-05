@@ -5,7 +5,7 @@
 
 
 #Recieve age and store in age
-age = eval(input("enter age:"))
+age = int(input("enter age:"))
 #and: if both conditions are true it returns true
 #or: if either condition is true then it returns true
 #not: convert a true conditon into false or vise verse
