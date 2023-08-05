@@ -1,5 +1,5 @@
 #store the user input of 2 numbers and the operator
-num1, opperator, num2 = input("Enter calculation").split()
+num1, opperator, num2 = input("Enter calculation ").split()
 
 #Convert the strings to integers
 num1 = int(num1)
