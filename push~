@@ -1,0 +1,4 @@
+#!/bin/bash
+#this script updates my git repository with all the current offline changes
+git push origin main
+export Username for 'https://github.com': = 'abbot00'
