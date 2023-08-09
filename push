@@ -1,0 +1,22 @@
+#!/bin/bash
+#this script updates my git repository with all the current offline changes
+#askes the user for github username 
+read -p "Enter your git username: " username
+#automatically inputs my github password or key
+password="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"
+#set git credentials
+git config --global credential.helper store
+echo "url=https://$username:$password@$(git config --get remote.origin.url)">~/.git-credentials
+#add changes to staging area
+git add .
+#commit changes with a commit message
+read -p "Enter commit message: " message
+git commit -m "$message"
+#push to main 
+git push origin main
+
+#clear credentuals from git
+git config --global --unset credential.helper
+rm ~/.git-credentials
+
+echo "Bravo!!!"

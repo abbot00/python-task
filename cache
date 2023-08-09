@@ -1,0 +1,10 @@
+#!/bin/bash
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=86400'
+#genarates new ssh
+read -p "Email: " email
+ssh-keygen -t rsa -b 4096 -C "$email"
+#add view your public key to add to your github account
+cat ~/.ssh/id_rsa.pub
+
+echo "Copy the above key!"
