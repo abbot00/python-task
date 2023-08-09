@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #draw a pine tree on screen 
 
 #gets the lengt of the tree from user
