@@ -1,3 +1,5 @@
+#A - Z == 65 - 90
+#a - z == 97 - 122
 #enter a string to hide in uppercase: HIDE
 from urllib.parse import scheme_chars
 
