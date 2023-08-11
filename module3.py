@@ -14,91 +14,92 @@ encrypts a series of strings for the user and dycripts at the reciveing end
 """
 #recieve the message to encrypt and the number of caracters to shift
 #ask user t0 input words
-
-message = input("enter your message: ")
-key = int(input("enter your encryption key (between 1- 26): "))
-
-#prepare the secret_message
-sec_message = ""
-#cycle through each character in the message
-for char in message:
+def encrypt(message = input("enter your message: ") , key  = int(input("enter your encryption key (between 1- 26): "))):
+  
+    #prepare the secret_message
+    sec_message = ""
+    #cycle through each character in the message
+    for char in message:
     
 
-    #if it isnt a letter then keep it as it is
-    if char.isalpha():
+        #if it isnt a letter then keep it as it is
+        if char.isalpha():
 
-         #get the character code and add the shift amout
-        char_code = ord(char)
-        char_code += key 
-        #if uppercase then compare to uppercase unicodes 
-        if char.isupper():
+             #get the character code and add the shift amout
+            char_code = ord(char)
+            char_code += key 
+            #if uppercase then compare to uppercase unicodes 
+            if char.isupper():
                 
-            #if bigger than Z subtract 26
-            if char_code > ord('Z'):
-                char_code -= 26
-            #if smaller than A add 26
-            if char_code < ord('A'):
-                char_code += 26
+                #if bigger than Z subtract 26
+                if char_code > ord('Z'):
+                    char_code -= 26
+                #if smaller than A add 26
+                if char_code < ord('A'):
+                    char_code += 26
 
 
-        #do the same for lowercase characters
+            #do the same for lowercase characters
+            else:
+                 #if bigger than z subtract 26
+                if char_code > ord('z'):
+                    char_code -= 26
+                #if smaller than a add 26
+                if char_code < ord('a'):
+                    char_code += 26
+
+
+
+        #convert from code to letter and add to message
+            sec_message += chr(char_code)
+
+        #if not a letter leave character as is
         else:
-             #if bigger than z subtract 26
-            if char_code > ord('z'):
-                char_code -= 26
-            #if smaller than a add 26
-            if char_code < ord('a'):
-                char_code += 26
+            sec_message += char
+    print("Encrypted : {}".format(sec_message))
 
 
-
-    #convert from code to letter and add to message
-        sec_message += chr(char_code)
-
-    #if not a letter leave character as is
-    else:
-        sec_message += char
-print("Encrypted : {}".format(sec_message))
-
-
-# to decrypt the only thing that changes isthe sign of the key
-key = -key
-message = ""
-for char in sec_message:
+def decrypt(sec_message , key):
+    # to decrypt the only thing that changes isthe sign of the key
+    key = -key
+    message = ""
+    for char in sec_message:
     
 
-    #if it isnt a letter then keep it as it is
-    if char.isalpha():
+        #if it isnt a letter then keep it as it is
+        if char.isalpha():
 
-         #get the character code and add the shift amout
-        char_code = ord(char)
-        char_code += key 
-        #if uppercase then compare to uppercase unicodes 
-        if char.isupper():
+             #get the character code and add the shift amout
+            char_code = ord(char)
+            char_code += key 
+            #if uppercase then compare to uppercase unicodes 
+            if char.isupper():
                 
-            #if bigger than Z subtract 26
-            if char_code > ord('Z'):
-                char_code -= 26
-            #if smaller than A add 26
-            if char_code < ord('A'):
-                char_code += 26
+                #if bigger than Z subtract 26
+                if char_code > ord('Z'):
+                    char_code -= 26
+                #if smaller than A add 26
+                if char_code < ord('A'):
+                    char_code += 26
 
 
-        #do the same for lowercase characters
+            #do the same for lowercase characters
+            else:
+                 #if bigger than z subtract 26
+                if char_code > ord('z'):
+                    char_code -= 26
+                #if smaller than a add 26
+                if char_code < ord('a'):
+                    char_code += 26
+
+
+
+        #convert from code to letter and add to message
+            message += chr(char_code)
+
+        #if not a letter leave character as is
         else:
-             #if bigger than z subtract 26
-            if char_code > ord('z'):
-                char_code -= 26
-            #if smaller than a add 26
-            if char_code < ord('a'):
-                char_code += 26
+            message += char
+    print("Decrypted : {}".format(message))
 
-
-
-    #convert from code to letter and add to message
-        message += chr(char_code)
-
-    #if not a letter leave character as is
-    else:
-        message += char
-print("Decrypted : {}".format(message))
+encrypt("jude is here", 5)
