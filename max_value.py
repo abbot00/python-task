@@ -1,4 +1,4 @@
-
+#this is an illustration of a function that returns the max value in a list of integers
 def max_integer(my_list=[]):
     if len(my_list) == 0:
         return None
