@@ -4,7 +4,13 @@ def fib (n):
        
     else:
          return fib(n-1) + fib(n-2)
-n = 0
-while n <= 20:
-    print(fib(n), end=', ')
-    n += 1
+     
+#ask the user how many numbers they want
+     
+n = int(input("how many fib numbers: "))
+#loop while calling for each new number
+m = 0
+while m <= n:
+    print(fib(m), end=', ')
+    m += 1
+   
