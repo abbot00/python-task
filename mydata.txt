@@ -1,0 +1,1 @@
+this is an exampl of write and read in python C:\Users\Abbot\OneDrive\Documents\python task
